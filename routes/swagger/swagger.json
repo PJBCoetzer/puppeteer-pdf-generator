@@ -1,0 +1,39 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "PDF Generator",
+        "version": "1.0.0",
+        "description": "Generate a PDF file"
+    },
+    
+    "paths": {
+               
+        "/generatepdf": {
+            "get": {
+                "description": "Builds a PDF file using URL",
+                "x-controller-name": "PDF",
+                "x-operation-name": "generatepdf",
+                "tags": ["PDF"],
+                "produces": ["application/json", "text/plain"],
+                "parameters": [{
+                    "name": "page_url",
+                    "in": "query",
+                    "required": true,
+                    "type": "string"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "Ok"
+                    },
+                    "400": {
+                        "description": "Check Request"
+                    },
+                    "500": {
+                        "description": "Internal Error"
+                    }
+                }
+            }
+        }
+    }
+
+}
